@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.anclas {
+  color: #F6F0EC;
+}
+.anclas .kart {
+  font-size: 20px;
+}
+
+.anclas:hover {
+  color: whitesmoke;
+}
+
+.album {
+  height: 400px;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+  background: #A21215;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #5A0102;
+  border-radius: 5px;
+}
+
+body {
+  background-color: #5A0102;
+}/*# sourceMappingURL=styles.css.map */
