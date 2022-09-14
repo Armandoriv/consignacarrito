@@ -10,7 +10,7 @@
     <title>La cava de Yiyi</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark">
+    <nav class="navbar navbar-expand-lg bg-dark fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"><img src="./imagenes/logo-white.svg" alt=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,10 @@
                 <a class="nav-link anclas" href="#">Quienes somos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link anclas" href="#"><i class="bi bi-cart4 kart"></i></a>
+                <a class="nav-link anclas" href="#">
+                  <i class="bi bi-cart4 kart"></i>
+                  <span id="cartCounter"></span>
+                </a>
               </li>
             </ul>
           </div>
@@ -50,95 +53,36 @@
         </div>
       </div>
       <section class="container productos">
-        <div class="row">
+        <div id="container" class="row">
           <div class="col-12 text-center mt-5 mb-5">
-            <h2 class="anclas">Promociones</h2>
+            <h2 class="anclas">Destacados</h2>
           </div>
-          <article class="col-3 card-effect">
-            <div class="card d-flex flex-column text-center justify-content-center text">
-              <img src="./imagenes/ron de caña.webp" alt="Raiting" class="stock card-img-top">
-              <div class="card-body">
-                <h4 class="card-title">Ron Flor de Caña</h4>
-                <p class="card-text">$670</p>
-                <a href="#" class="btn btn-primary">Agregar</a>
-              </div>
-            </div>
-          </article>
-          <article class="col-3 card-effect">
-            <div class="card d-flex flex-column text-center justify-content-center text">
-              <img src="./imagenes/tequila promo.webp" alt="Raiting" class="stock card-img-top">
-              <div class="card-body">
-                <h4 class="card-title">Tequila Don Ramón</h4>
-                <p class="card-text">$450</p>
-                <a href="#" class="btn btn-primary">Agregar</a>
-              </div>
-            </div>
-          </article>
-          <article class="col-3 card-effect">
-            <div class="card d-flex flex-column text-center justify-content-center text">
-              <img src="./imagenes/vino.webp" alt="Raiting" class="stock card-img-top">
-              <div class="card-body">
-                <h4 class="card-title">Vino Tinto Peromato</h4>
-                <p class="card-text">$300</p>
-                <a href="#" class="btn btn-primary">Agregar</a>
-              </div>
-            </div>
-          </article>
-          <article class="col-3 card-effect">
-            <div class="card d-flex flex-column text-center justify-content-center text">
-              <img src="./imagenes/mezcal.webp" alt="Raiting" class="stock card-img-top">
-              <div class="card-body">
-                <h4 class="card-title">Mezcal Verde</h4>
-                <p class="card-text">$700</p>
-                <a href="#" class="btn btn-primary">Agregar</a>
-              </div>
-            </div>
-          </article>
-          <article class="col-3 card-effect mt-5">
-            <div class="card d-flex flex-column text-center justify-content-center text">
-              <img src="./imagenes/ron blanco.webp" alt="Raiting" class="stock card-img-top">
-              <div class="card-body">
-                <h4 class="card-title">Flor de Caña blanco</h4>
-                <p class="card-text">$850</p>
-                <a href="#" class="btn btn-primary">Agregar</a>
-              </div>
-            </div>
-          </article>
-          <article class="col-3 card-effect mt-5">
-            <div class="card d-flex flex-column text-center justify-content-center text">
-              <img src="./imagenes/vino blanco.webp" alt="Raiting" class="stock card-img-top">
-              <div class="card-body">
-                <h4 class="card-title">Lagar de Proventus</h4>
-                <p class="card-text">$500</p>
-                <a href="#" class="btn btn-primary">Agregar</a>
-              </div>
-            </div>
-          </article>
-          <article class="col-3 card-effect mt-5">
-            <div class="card d-flex flex-column text-center justify-content-center text">
-              <img src="./imagenes/promo absolut.webp" alt="Raiting" class="stock card-img-top">
-              <div class="card-body">
-                <h4 class="card-title">Absolut Vodka</h4>
-                <p class="card-text">$600</p>
-                <a href="#" class="btn btn-primary">Agregar</a>
-              </div>
-            </div>
-          </article>
-          <article class="col-3 card-effect mt-5">
-            <div class="card d-flex flex-column text-center justify-content-center text">
-              <img src="./imagenes/ginebra.webp" alt="Raiting" class="stock card-img-top">
-              <div class="card-body">
-                <h4 class="card-title">Gin Beefeater</h4>
-                <p class="card-text">$350</p>
-                <a href="#" class="btn btn-primary">Agregar</a>
-              </div>
-            </div>
-          </article>
+
+
+
+
+
         </div>
+
+
+
+
+
       </section>
+      <footer class="container-fluid bg-dark mt-5">
+        <div class="anchoFooter container-fluid row">
+            <div class="redes col-md-12">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-whatsapp"></i></a>
+              <a href="#"><i class="bi bi-tiktok"></i></a>
+            </div>
+        </div>
+      </footer>
 
 
     <!-- JavaScript Bundle with Popper -->
+    <script src="./index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>
