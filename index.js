@@ -1,5 +1,6 @@
 const productos = []
 let carrito = []
+const tbody = document.querySelector('.tbody')
 
 class Producto{
     constructor(id, nombre, precio, img){
@@ -63,7 +64,7 @@ function agregarALCarrito(producto) {
             ...carritoFiltrado,
             {...enCarrito, cantidad: enCarrito.cantidad + 1}
         ]
-        
+        renderCarrito()
     }
     contador.innerHTML = carrito.reduce((acc, prod) => acc + prod.cantidad, 0)
 
@@ -71,4 +72,26 @@ function agregarALCarrito(producto) {
 const contador = document.getElementById('cartCounter')
 contador.innerHTML = carrito.reduce((acc, prod) => acc + prod.cantidad, 0)
 
+function renderCarrito(){
+    tbody.innerHTML = ''
+    carrito.map(item => {
+        const tr = document.createElement('tr')
+        tr.classList.add('itemCarrito')
+        const content = `
+        <th scope="row">1</th>
+              <td class="table__productos">
+                <img src=" ${this.img} " alt="">
+              </td>
+              <h6 class="title"> ${this.nombre} </h6>
+              <td class="table__precio"><p> ${this.precio} </p></td>
+              <td class="table__cantidad">
+                <input type="number" min="1" value=" ${this.precio} ">
+                <button class="delete btn btn-danger">x</button>
+              </td>
 
+        `
+        tr.innerHTML = content;
+        tbody.append(tr)
+    })
+
+}

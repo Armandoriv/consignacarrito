@@ -101,4 +101,262 @@ footer .mapa .bi-geo-alt {
 }
 footer .mapa .bi-geo-alt:hover {
   color: C43C2C;
+}
+
+.form {
+  background-color: #A21215;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 1em;
+  padding: 3.5em 1.5em;
+  margin: auto;
+  opacity: 0.9;
+}
+.form .form_container {
+  width: 100%;
+  display: grid;
+  gap: 1em;
+  grid-auto-columns: 100%;
+}
+.form .form_container .form_input {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.8em 1em;
+  outline: none;
+  border: none;
+  border: 1px solid #5A0102;
+  border-radius: 0.2em;
+  background-color: #5A0102;
+  color: white;
+}
+.form .form_container .form_input--message {
+  resize: none;
+  padding: 1.8em 1em;
+  margin-bottom: 0.5em;
+  color: white;
+}
+
+.boton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boton .form_cta {
+  position: relative;
+  display: inline-flex;
+  padding: 10px 30px;
+  background: gray;
+  color: white;
+  text-decoration: none;
+  border: none;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.boton .form_cta span {
+  position: relative;
+  z-index: 1;
+}
+.boton .form_cta::before {
+  content: "";
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: #fc6d6d;
+  transition: width 0.5s, height 0.5s;
+}
+.boton .form_cta:hover::before {
+  width: 250px;
+  height: 250px;
+}
+
+.contact-conten {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  background-color: #a80000;
+  width: 100%;
+  height: 460px;
+  position: relative;
+  z-index: 0;
+  padding: 50px 0px;
+}
+.contact-conten .wabeContact {
+  position: absolute;
+  width: 100%;
+  top: -20px;
+  left: 0;
+  transform: rotate(180deg);
+}
+.contact-conten .wabeContact img {
+  width: 100%;
+  height: 100px;
+}
+.contact-conten h3 {
+  font-size: 3rem;
+  font-family: Logo;
+  font-weight: 500;
+  text-align: center;
+}
+.contact-conten .form-contact {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.contact-conten .form-contact .contact-nombre, .contact-conten .form-contact .contact-text, .contact-conten .form-contact .contact-email {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+}
+.contact-conten .form-contact .contact-nombre .contact-nombre-input, .contact-conten .form-contact .contact-text .contact-nombre-input, .contact-conten .form-contact .contact-text .contact-text-textarea, .contact-conten .form-contact .contact-email .contact-nombre-input, .contact-conten .form-contact .contact-email .contact-email-input {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  border: none;
+  border-bottom: 1px solid #000000;
+  background-color: transparent;
+  outline: none;
+  padding: 5px;
+}
+.contact-conten .form-contact .contact-nombre .contact-nombre-label, .contact-conten .form-contact .contact-text .contact-nombre-label, .contact-conten .form-contact .contact-text .contact-text-label, .contact-conten .form-contact .contact-email .contact-nombre-label, .contact-conten .form-contact .contact-email .contact-email-label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  transition: all 300ms ease;
+}
+.contact-conten .form-contact .contact-nombre .contact-label-up, .contact-conten .form-contact .contact-text .contact-label-up, .contact-conten .form-contact .contact-email .contact-label-up {
+  transition: all 300ms ease;
+  top: -10px;
+  left: 0;
+  font-size: 0.7rem;
+}
+.contact-conten .form-contact .contact-nombre .contact-nombre-mensaje, .contact-conten .form-contact .contact-text .contact-nombre-mensaje, .contact-conten .form-contact .contact-text .contact-text-mensaje, .contact-conten .form-contact .contact-email .contact-nombre-mensaje, .contact-conten .form-contact .contact-email .contact-email-mensaje {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  width: 80%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5215686275);
+  color: #ffffff;
+  border-radius: 6px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.45em, rgba(90, 125, 188, 0.05) 0px 0.45em 1em;
+  opacity: 0;
+}
+.contact-conten .form-contact .contact-email .email-ok {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 100px;
+  background-color: #000;
+}
+.contact-conten .form-contact .contact-email .chackEmail {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+.contact-conten .form-contact .contact-email .chackEmailShow {
+  opacity: 1;
+}
+.contact-conten .form-contact .contact-email .shake-horizontal {
+  -webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+.contact-conten .form-contact .contact-text .contact-text-textarea {
+  resize: vertical;
+  min-height: 50px;
+  max-height: 100px;
+}
+.contact-conten .form-contact .contact-enviado-mensaje {
+  position: absolute;
+  bottom: -95px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  width: 80%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5215686275);
+  color: #ffffff;
+  border-radius: 6px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.45em, rgba(90, 125, 188, 0.05) 0px 0.45em 1em;
+  opacity: 0;
+}
+.contact-conten .form-contact .buttonContacto {
+  position: absolute;
+  background-color: transparent;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 40px;
+  border: none;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  transition: all 500ms ease;
+  cursor: pointer;
+  outline: none;
+  font-size: 1rem;
+  overflow: hidden;
+}
+.contact-conten .form-contact .buttonContacto span {
+  position: absolute;
+  background: #000000;
+  transition: 0.5s;
+}
+.contact-conten .form-contact .buttonContacto span:nth-child(1) {
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: -100%;
+}
+.contact-conten .form-contact .buttonContacto span:nth-child(2) {
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  right: -100%;
+}
+.contact-conten .form-contact .buttonContacto span:nth-child(3) {
+  width: 2px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+}
+.contact-conten .form-contact .buttonContacto span:nth-child(4) {
+  width: 2px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+}
+.contact-conten .form-contact .buttonContacto:hover span:nth-child(1) {
+  left: 0;
+}
+.contact-conten .form-contact .buttonContacto:hover span:nth-child(2) {
+  right: 0;
+}
+.contact-conten .form-contact .buttonContacto:hover span:nth-child(3) {
+  bottom: 0;
+}
+.contact-conten .form-contact .buttonContacto:hover span:nth-child(4) {
+  top: 0;
+}
+.contact-conten .form-contact .buttonContacto:hover {
+  font-size: 1.1rem;
+}
+.contact-conten .form-contact .show {
+  -webkit-animation: showMensaje 5s;
+          animation: showMensaje 5s;
 }/*# sourceMappingURL=styles.css.map */

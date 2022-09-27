@@ -95,4 +95,287 @@ footer {
                 color: C43C2C;
             }
         }
+}
+.form{
+        background-color:#A21215 ;
+        width: 90%;
+        max-width: 700px;
+        border-radius: 1em;
+        padding: 3.5em 1.5em;
+        margin: auto;
+        opacity: .90;
+        .form_container {
+            width: 100%;
+            display: grid;
+            gap: 1em;
+            grid-auto-columns: 100%;
+            .form_input {
+                font-family: inherit;
+                font-size: 1rem;
+                padding: .8em 1em;
+                outline: none;
+                border: none;
+                border: 1px solid #5A0102;
+                border-radius: 0.2em;
+                background-color: #5A0102;
+                color: white;
+            }
+            .form_input--message {
+                resize: none;
+                padding: 1.8em 1em;
+                margin-bottom: .5em;
+                color: white;
+            }
+        }
     }
+    .boton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .form_cta {
+            position: relative;
+            display: inline-flex;
+            padding: 10px 30px;
+            background: gray;
+            color: white;
+            text-decoration: none;
+            border: none;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+        .form_cta span {
+            position: relative;
+            z-index: 1;
+        }
+        .form_cta::before {
+            content: "";
+            position: absolute;
+            top: var(--y);
+            left: var(--x);
+            transform: translate(-50%,-50%);
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: #fc6d6d;
+            transition: width 0.5s, height 0.5s;
+            
+
+        }
+        .form_cta:hover::before {
+            width: 250px;
+            height: 250px;
+
+        }
+}
+.contact-conten{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    background-color: #a80000;
+    width: 100%;
+    height: 460px;
+    position: relative;
+    z-index: 0;
+    padding: 50px 0px;
+    .wabeContact{
+        position: absolute;
+        width: 100%;
+        top: -20px;
+        left: 0;
+        transform: rotate(180deg);
+        img{
+            width: 100%;
+            height: 100px;
+        }
+    }
+    h3{
+        font-size: 3rem;
+        font-family: Logo;
+        font-weight: 500;
+        text-align: center;
+    }
+    .form-contact{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        .contact-nombre{
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+            margin: auto;
+            .contact-nombre-input{
+                width: 100%;
+                position: relative;
+                z-index: 1;
+                border: none;
+                border-bottom: 1px solid #000000;
+                background-color: transparent;
+                outline: none;
+                padding: 5px;
+            }
+            .contact-nombre-label{
+                position: absolute;
+                top: 50%;
+                left: 5px;
+                transform: translateY(-50%);
+                transition: all 300ms ease;
+            }
+            .contact-label-up{
+                transition: all 300ms ease;
+                top: -10px;
+                left: 0;
+                font-size: 0.7rem;
+            }
+            .contact-nombre-mensaje{
+                position: absolute;
+                bottom: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 0.8rem;
+                width: 80%;
+                text-align: center;
+                background-color: #00000085;
+                color: #ffffff;
+                border-radius: 6px;
+                box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.45em, 
+                rgba(90, 125, 188, 0.05) 0px 0.45em 1em;
+                opacity: 0;
+            }
+        }
+        .contact-email{
+            @extend .contact-nombre;
+            .email-ok{
+                position: absolute;
+                z-index: 2;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                width: 100px;
+                background-color: #000
+            }
+            .contact-email-input{
+                @extend .contact-nombre-input;
+            }
+            .contact-email-label{
+                @extend .contact-nombre-label;
+            }
+            .chackEmail{
+                opacity: 0;
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%)
+            }
+            .chackEmailShow{
+                opacity: 1;
+            }
+            .shake-horizontal {
+                -webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+                animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+            }
+            .contact-email-mensaje{
+                @extend .contact-nombre-mensaje;
+            }
+        }
+        .contact-text{
+            @extend .contact-nombre;
+            .contact-text-textarea{
+                @extend .contact-nombre-input;
+                resize:vertical;
+                min-height: 50px;
+                max-height: 100px;
+            }.contact-text-label{
+                @extend .contact-nombre-label;
+            }
+            .contact-text-mensaje{
+                @extend .contact-nombre-mensaje;
+            }
+        }
+        .contact-enviado-mensaje{
+            position: absolute;
+            bottom: -95px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            width: 80%;
+            text-align: center;
+            background-color: #00000085;
+            color: #ffffff;
+            border-radius: 6px;
+            box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.45em, 
+            rgba(90, 125, 188, 0.05) 0px 0.45em 1em;
+            opacity: 0;
+        }
+        .buttonContacto{
+            position: absolute;
+            background-color: transparent;
+            bottom: -70px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 40px;
+            border: none;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            transition: all 500ms ease;
+            cursor: pointer;
+            outline: none;
+            font-size: 1rem;
+            overflow: hidden;
+            span {
+                position: absolute;
+                background: #000000;;
+                transition: .5s;
+                &:nth-child(1) {
+                    width: 100%;
+                    height: 2px;
+                    top: 0;
+                    left: -100%;
+                }
+                &:nth-child(2) {
+                    width: 100%;
+                    height: 2px;
+                    bottom: 0;
+                    right: -100%;
+                }
+                &:nth-child(3) {
+                    width: 2px;
+                    height: 100%;
+                    bottom: -100%;
+                    left: 0;
+                }
+                &:nth-child(4) {
+                    width: 2px;
+                    height: 100%;
+                    top: -100%;
+                    right: 0;
+                }
+            }
+            &:hover span:nth-child(1) {
+                left: 0;
+            }
+            &:hover span:nth-child(2) {
+                right: 0;
+            }
+            &:hover span:nth-child(3) {
+                bottom: 0;
+            }
+            &:hover span:nth-child(4) {
+                top: 0;
+            }
+            &:hover{
+                font-size: 1.1rem;
+            }
+        }
+        .show{
+            animation: showMensaje 5s ;
+        }
+    }
+}
+
+
+    
