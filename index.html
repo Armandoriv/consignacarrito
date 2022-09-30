@@ -93,6 +93,52 @@
         </div>
 
       </section>
+      <form class="form mt-4" id="form" action="https://formspree.io/f/xknerdkp"
+      method="POST">
+        <div class="form_container">
+          <input type="text" id="name" for="name" class="form_input" placeholder="Nombre" name="name">
+          <input type="email" id="email" class="form_input" placeholder="Email" name="email">
+          <textarea class="form_input form_input--message" id="message" placeholder="Mensaje" name="message"></textarea>
+        </div>
+        <div class="boton mt-4">
+          <button type="submit" class="form_cta"><span>Enviar</span></button>
+        </div>
+      </form>
+    </section>
+  <script>
+    const $form = document.querySelector('#form')
+
+    $form.addEventListener('submit', handlesubmit)
+
+
+    async function handlesubmit(event) {
+      event.preventDefault()
+      const form =new FormData(this)
+      const response = await fetch(this.action, {
+        method: this.method,
+        body: form,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      if (response.ok) {
+        this.reset()
+        Swal.fire({
+        icon: 'success',
+        title: '¡Mensaje Enviado!',
+        text: 'Gracias por su mensaje. Su oponion cuenta mucho para nosotros ',
+        showConfirmButton: true,
+        confirmButtonColor: "#fc6d6d",
+        background: "#343f4f",
+        color: "#fff"
+
+
+})
+     
+      }
+    }
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <footer class="container-fluid bg-dark mt-5">
         <div class="anchoFooter container-fluid row">
             <div class="redes col-md-12">
